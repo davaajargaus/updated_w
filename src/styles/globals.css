@@ -43,17 +43,18 @@
   padding-top: 50px;
   flex-wrap: wrap;
   justify-content: center;
-}
+} 
 .obj {
+  
   transition: all 0.5s ease;
   margin: 15px 15px;
   flex-direction: column;
   display: flex;
   align-items: center;
   width: 363px;
-  height: 440px;
+  
 
-  background-color: rgba(255, 255, 255, 0.822);
+  background-color: rgba(96, 102, 128, 0.926);
   border-radius: 30px;
 }
 #image {
@@ -300,5 +301,9 @@ body{
 }
 .relativebolgo{
 position: relative;
+height: 250px;
 
+}
+.li{
+  text-decoration: none;
 }

@@ -1,46 +1,100 @@
 import Link from "next/link";
 
 export function Card(props) {
-  console.log(props);
+  const playAudio = () => {
+    const au= new Audio(
+    props.boos?.displayName=="Chamber"?"/chamber-v.mp3":
+    props.boos?.displayName=="Gekko"?"/gekko-v.mp3":
+    props.boos?.displayName=="Fade"?"/fade-v.mp3":
+    props.boos?.displayName=="Breach"?"/breach-v.mp3":
+    props.boos?.displayName=="Deadlock"?"/deadlk-v.mp3":
+    props.boos?.displayName=="Raze"?"/raze-v.mp3":
+    props.boos?.displayName=="KAY/O"?"/kayo-v.mp3":
+    props.boos?.displayName=="Skye"?"/skye-v.mp3":
+    props.boos?.displayName=="Cypher"?"/cyber-v.mp3":
+    props.boos?.displayName=="Sova"?"/":
+    props.boos?.displayName=="Killjoy"?"/":
+    props.boos?.displayName=="Harbor"?"/":
+    props.boos?.displayName=="Viper"?"/":
+    props.boos?.displayName=="Phoenix"?"/":
+    props.boos?.displayName=="Astra"?"/":
+    props.boos?.displayName=="Brimstone"?"/":
+    props.boos?.displayName=="Neon"?"/":
+    props.boos?.displayName=="Yoru"?"/":
+    props.boos?.displayName=="Sage"?"/":
+    props.boos?.displayName=="Reyna"?"/":
+    props.boos?.displayName=="Omen"?"/": "/jett-v.mp3");
+    au.play()
+  };
+
   return (
-    <Link href="/">
-      <div className="obj">
+    <div div  className="li">
+      <div
+        className="obj"
+        style={{
+          backgroundImage: `url(${props.boos?.background})  `,
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          height: "750px",
+        }}
+      >
         <div className="relativebolgo">
-          <img
-            id="image"
-            src={props.boos?.background}
-            className="character-img"
-          />
           <img
             id="image"
             src={props.boos?.fullPortraitV2}
             className="character"
           />
         </div>
-        <h1
+        <div
+          onClick={playAudio}
           style={{
-            color: "black",
+            cursor:"pointer",
+            backgroundColor: "black",
+            textDecoration: "none",
+            color: "white",
             fontFamily: "cabin",
             fontSize: "24px",
-            paddingLeft: "20px",
+            width: "250px",
+            display: "flex",
+            justifyContent: "center",
+            height: "50px",
+            alignItems: "center",
+            borderRadius: "40px",
           }}
         >
-          {props.boos?.title}
-        </h1>
+          {props.boos?.displayName} -
+          <span
+            style={{
+              color:
+                props.boos?.role?.displayName == "Sentinel"
+                  ? "green"
+                  : props.boos?.role?.displayName == "Duelist"
+                  ? "red"
+                  : props.boos?.role?.displayName == "Controller"
+                  ? "yellow"
+                  : "purple",
+            }}
+          >
+            ({props.boos?.role?.displayName})
+          </span>
+        </div>
         <p
           style={{
             color: "black",
             fontFamily: "cabin",
-            fontSize: "16px",
+            fontSize: "25px",
             paddingLeft: "25px",
             paddingRight: "25px",
+            backgroundColor: "white",
+            width: "300px",
+            borderRadius: "10px",
           }}
         >
-          {props.boos?.about}
+          {props.boos?.description}
         </p>
         <div>
           <div id="bottom_title">
-            <img id="neon" src={props.boos?.img2}></img>
+            <img id="neon" src={props.boos?.displayIconSmall}></img>
 
             <h1
               id="w"
@@ -54,7 +108,7 @@ export function Card(props) {
           </div>
         </div>
       </div>
-    </Link>
+    </div>
   );
 }
 export function Header() {
