@@ -12,18 +12,18 @@ export function Card(props) {
     props.boos?.displayName=="KAY/O"?"/kayo-v.mp3":
     props.boos?.displayName=="Skye"?"/skye-v.mp3":
     props.boos?.displayName=="Cypher"?"/cyber-v.mp3":
-    props.boos?.displayName=="Sova"?"/":
-    props.boos?.displayName=="Killjoy"?"/":
-    props.boos?.displayName=="Harbor"?"/":
-    props.boos?.displayName=="Viper"?"/":
-    props.boos?.displayName=="Phoenix"?"/":
-    props.boos?.displayName=="Astra"?"/":
-    props.boos?.displayName=="Brimstone"?"/":
-    props.boos?.displayName=="Neon"?"/":
-    props.boos?.displayName=="Yoru"?"/":
-    props.boos?.displayName=="Sage"?"/":
-    props.boos?.displayName=="Reyna"?"/":
-    props.boos?.displayName=="Omen"?"/": "/jett-v.mp3");
+    props.boos?.displayName=="Sova"?"/sova-v.mp3":
+    props.boos?.displayName=="Killjoy"?"/kj-v.mp3":
+    props.boos?.displayName=="Harbor"?"/harbor-v.mp3":
+    props.boos?.displayName=="Viper"?"/viper-v.mp3":
+    props.boos?.displayName=="Phoenix"?"/pheo-v.mp3":
+    props.boos?.displayName=="Astra"?"/astra-v.mp3":
+    props.boos?.displayName=="Brimstone"?"/brim-v.mp3":
+    props.boos?.displayName=="Neon"?"/neon-v.mp3":
+    props.boos?.displayName=="Yoru"?"/yoru-v.mp3":
+    props.boos?.displayName=="Sage"?"/sage-v.mp3":
+    props.boos?.displayName=="Reyna"?"/reyna-v.mp3":
+    props.boos?.displayName=="Omen"?"/omen-v.mp3": "/jett-v.mp3");
     au.play()
   };
 
@@ -35,12 +35,13 @@ export function Card(props) {
           backgroundImage: `url(${props.boos?.background})  `,
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          height: "750px",
+          height: "700px",
+          
         }}
       >
         <div className="relativebolgo">
           <img
-            id="image"
+            id="ii"
             src={props.boos?.fullPortraitV2}
             className="character"
           />
@@ -49,7 +50,7 @@ export function Card(props) {
           onClick={playAudio}
           style={{
             cursor:"pointer",
-            backgroundColor: "black",
+            backgroundColor: "rgba(0,0,0,0.8)",
             textDecoration: "none",
             color: "white",
             fontFamily: "cabin",
@@ -67,12 +68,12 @@ export function Card(props) {
             style={{
               color:
                 props.boos?.role?.displayName == "Sentinel"
-                  ? "green"
+                  ? "#00FF7F"
                   : props.boos?.role?.displayName == "Duelist"
                   ? "red"
                   : props.boos?.role?.displayName == "Controller"
-                  ? "yellow"
-                  : "purple",
+                  ? "#FFA500"
+                  : "#9370DB",
             }}
           >
             ({props.boos?.role?.displayName})
@@ -85,9 +86,9 @@ export function Card(props) {
             fontSize: "25px",
             paddingLeft: "25px",
             paddingRight: "25px",
-            backgroundColor: "white",
+            backgroundColor: "rgba(255,255,255,0.8)",
             width: "300px",
-            borderRadius: "10px",
+            borderRadius: "15px",
           }}
         >
           {props.boos?.description}

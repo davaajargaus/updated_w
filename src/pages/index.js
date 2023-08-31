@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   const [datas, setDatas] = useState([]);
   useEffect(() => {
-    fetch(`https://valorant-api.com/v1/agents?limit=9`)
+    fetch(`https://valorant-api.com/v1/agents`)
       .then((response) => response.json())
       .then((data) => setDatas(data.data));
   }, []);
